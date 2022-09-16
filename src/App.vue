@@ -1,6 +1,8 @@
 <template>
   <section>
-    <router-view class="app-main" />
+    <div class="min-h-full font-Poppins box-border">
+      <router-view class="app-main" />
+    </div>
   </section>
 </template>
 
@@ -9,10 +11,10 @@ import { onMounted } from "vue";
 import { storeToRefs } from "pinia";
 import { useRouter } from "vue-router";
 import { useUserStore } from "./store/user.js";
-
 const router = useRouter();
 const userStore = useUserStore();
 const { user } = storeToRefs(userStore);
+
 
 onMounted(async () => {
   try {
